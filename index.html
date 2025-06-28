@@ -1,39 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Download Page</title>
-</head>
-<body>
-    <h1>Video Download</h1>
-    <p>If the download doesn't start automatically, click the button below.</p>
-    
-    <button id="downloadBtn">Download Video</button>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OIIA(mal)ware</title>
+    <link rel="icon" href="./public/favicon.ico" type="image/x-icon" />
+    <meta
+      name="description"
+      content="You scanned a random QR code. Bold move! At least it's just Rick Astley and not malware... this time."
+    />
+  </head>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    video {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 1;
+    }
+    #muteToggle {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+  <body>
+    <video id="videoPlayer" autoplay muted loop>
+      <source src="./public/video.mp4" type="video/mp4" />
+      Your browser does not support the video tag LOL
+    </video>
+    <button id="muteToggle">
+      <img src="./public/muted.png" alt="Mute" width="100%" height="100%" />
+    </button>
     <script>
-        // Replace this URL with the path to your actual video
-        const videoUrl = "./video.mp4";
-        
-        // Function to trigger download
-        function downloadVideo(url) {
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = "video.mp4";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-        
-        // Try to download on page load
-        window.onload = function() {
-            downloadVideo(videoUrl);
-        };
-        
-        // Manual download button
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-            downloadVideo(videoUrl);
+      document
+        .getElementById("muteToggle")
+        .addEventListener("click", function () {
+          const video = document.getElementById("videoPlayer");
+          video.muted = !video.muted;
+
+          // Update with appropriate icon based on muted state
+          this.innerHTML = video.muted
+            ? '<img src="./public/muted.png" alt="Mute" width="100%" height="100%" >'
+            : '<img src="./public/unmuted.png" alt="Unmute" width="100%" height="100%" >';
         });
     </script>
-</body>
+    <script>
+      const videoUrl = "./public/video.mp4";
+
+      function downloadVideo(url) {
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Never_gonna_give_gou_up-OIIA_OIIA.mp4";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+
+      window.onload = function () {
+        downloadVideo(videoUrl);
+      };
+    </script>
+  </body>
 </html>
