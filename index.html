@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Download Page</title>
+</head>
+<body>
+    <h1>Video Download</h1>
+    <p>If the download doesn't start automatically, click the button below.</p>
+    
+    <button id="downloadBtn">Download Video</button>
+    
+    <script>
+        // Replace this URL with the path to your actual video
+        const videoUrl = "./video.mp4";
+        
+        // Function to trigger download
+        function downloadVideo(url) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "video.mp4";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+        
+        // Try to download on page load
+        window.onload = function() {
+            downloadVideo(videoUrl);
+        };
+        
+        // Manual download button
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            downloadVideo(videoUrl);
+        });
+    </script>
+</body>
+</html>
