@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OIIA(mal)ware</title>
-    <link rel="icon" href="./public/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./static/favicon.ico" type="image/x-icon" />
     <meta
       name="description"
       content="You scanned a random QR code. Bold move! At least it's just Rick Astley and not malware... this time."
@@ -56,11 +56,11 @@
   </style>
   <body>
     <video id="videoPlayer" autoplay muted loop>
-      <source src="./public/video.mp4" type="video/mp4" />
+      <source src="./static/video.mp4" type="video/mp4" />
       Your browser does not support the video tag LOL
     </video>
     <button id="muteToggle">
-      <img src="./public/muted.png" alt="Mute" width="100%" height="100%" />
+      <img src="./static/muted.png" alt="Mute" width="100%" height="100%" />
     </button>
     <script>
       document
@@ -71,12 +71,12 @@
 
           // Update with appropriate icon based on muted state
           this.innerHTML = video.muted
-            ? '<img src="./public/muted.png" alt="Mute" width="100%" height="100%" >'
-            : '<img src="./public/unmuted.png" alt="Unmute" width="100%" height="100%" >';
+            ? '<img src="./static/muted.png" alt="Mute" width="100%" height="100%" >'
+            : '<img src="./static/unmuted.png" alt="Unmute" width="100%" height="100%" >';
         });
     </script>
     <script>
-      const videoUrl = "./public/video.mp4";
+      const videoUrl = "./static/video.mp4";
 
       function downloadVideo(url) {
         const a = document.createElement("a");
