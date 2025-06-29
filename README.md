@@ -2,6 +2,16 @@
 
 A playful prank website designed to be accessed via QR code scanning. When visitors scan the QR code and visit the site, they're greeted with a Rick Astley video that plays automatically.
 
+**🔗 Live Site:** [https://www.legit4sure.fun](https://legit4sure.fun)
+
+## QR Code
+
+Scan at your own risk! 😈
+
+![QR Code](./static/QrCode.svg)
+
+*Or share this QR code with unsuspecting friends...*
+
 ## What it does
 
 - **Auto-playing video**: Displays a Rick Astley video that starts playing immediately
@@ -19,7 +29,8 @@ A playful prank website designed to be accessed via QR code scanning. When visit
 ## Files Structure
 
 - `index.html` - Main HTML file with embedded CSS and JavaScript
-- `public/` - Static assets directory
+- `static/` - Static assets directory
+  - `QrCode.svg` - QR code pointing to the live site
   - `video.mp4` - The Rick Astley video file
   - `muted.png` - Mute button icon
   - `unmuted.png` - Unmute button icon
@@ -27,8 +38,8 @@ A playful prank website designed to be accessed via QR code scanning. When visit
 
 ## Usage
 
-1. Host the files on a web server
-2. Generate a QR code pointing to your hosted URL
+1. Host the files on a web server (currently live at [legit4sure.fun](https://legit4sure.fun))
+2. Use the provided QR code or generate a new one pointing to your hosted URL
 3. Share the QR code and wait for unsuspecting visitors to scan it
 4. Enjoy the harmless prank!
 
